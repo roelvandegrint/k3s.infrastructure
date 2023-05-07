@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: kube-prometheus-grafana
+  namespace: prometheus
+spec:
+  entryPoints:
+    # - websecure
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`grafana.k3s`)
+      priority: 10
+      services:
+        - name: prometheus-grafana
+          namespace: prometheus
+          port: 80
+  # tls:
+  #   certResolver: le
