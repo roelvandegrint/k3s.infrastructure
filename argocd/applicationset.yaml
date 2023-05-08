@@ -6,25 +6,25 @@ metadata:
 spec:
   generators:
   - git:
-      repoURL: 'https://github.com/roelvandegrint/k3s.infrastructure.git'
+      repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
       directories:
-      - path: kustomize/overlays/*
+      - path: kustomize
   template:
     metadata:
-      name: '{{path[1]}}-{{path.basename}}'
+      name: base-infrastructure
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
     spec:
       project: default
       source:
-        repoURL: 'https://github.com/roelvandegrint/k3s.infrastructure.git'
+        repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
         namespace: argocd
-        server: 'https://kubernetes.default.svc'
+        server: https://kubernetes.default.svc
       syncPolicy:
         automated:
           prune: true
