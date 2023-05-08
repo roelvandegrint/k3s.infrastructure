@@ -1,0 +1,6 @@
+helmCharts:
+- name: minecraft
+  repo: https://kubernetes-charts.storage.googleapis.com
+  version: v1.2.0
+  releaseName: test
+  namespace: testNamespace

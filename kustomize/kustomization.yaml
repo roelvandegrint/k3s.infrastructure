@@ -4,3 +4,4 @@ resources:
 # - ./kube-prometheus.yaml
 - ./prometheus.ingress-route.yaml
 - ./traefik-dashboard.ingress-route.yaml
+- ./minecraft.yaml
