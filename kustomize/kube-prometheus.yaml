@@ -1,6 +1,6 @@
 helmCharts:
 - name: kube-prometheus
-  includeCRDs: true
+  includeCRDs: false
   # valuesInline:
   #   minecraftServer:
   #     eula: true
@@ -10,4 +10,3 @@ helmCharts:
   releaseName: kube-prometheus
   version: 45.25.0
   repo: https://prometheus-community.github.io/helm-charts
-  namespace: prometheus
