@@ -1,5 +1,0 @@
-resources:
-- ./argocd.ingress-route.yml
-- ./grafana.ingress-route.yml
-- ./prometheus.ingress-route.yml
-- ./traefik-dashboard.ingress-route.yml

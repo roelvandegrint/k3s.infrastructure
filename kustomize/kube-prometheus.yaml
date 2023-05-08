@@ -1,0 +1,13 @@
+helmCharts:
+- name: kube-prometheus
+  includeCRDs: true
+  # valuesInline:
+  #   minecraftServer:
+  #     eula: true
+  #     difficulty: hard
+  #     rcon:
+  #       enabled: true
+  releaseName: kube-prometheus
+  version: 45.25.0
+  repo: https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack
+  namespace: prometheus
