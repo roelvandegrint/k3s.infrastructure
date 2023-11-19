@@ -63,7 +63,7 @@ spec:
        - treafik.roelvandegrint.com
      secretName: treafik-ingress-http-staging
  rules:
-   - host: k3s.roelvandegrint.com
+   - host: treafik.roelvandegrint.com
      http:
        paths:
          - path: /
