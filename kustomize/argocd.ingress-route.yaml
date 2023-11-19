@@ -27,7 +27,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: argocd-ingress
+ name: argocd.k3s-ingress
  namespace: argocd
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: web
@@ -40,6 +40,32 @@ spec:
     #  secretName: treafik-ingress-http-staging
  rules:
    - host: argocd.k3s
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: argocd-server
+               port:
+                 number: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: argocd.roelvandegrint.com-ingress
+ namespace: argocd
+ annotations:
+  traefik.ingress.kubernetes.io/router.entrypoints: web
+#  annotations:
+  #  cert-manager.io/issuer: letsencrypt-staging-issuer
+spec:
+ tls:
+   - hosts:
+       - argocd.roelvandegrint.com
+    #  secretName: treafik-ingress-http-staging
+ rules:
+   - host: argocd.roelvandegrint.com
      http:
        paths:
          - path: /
