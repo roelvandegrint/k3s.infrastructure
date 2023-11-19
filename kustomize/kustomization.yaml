@@ -1,6 +1,6 @@
 resources:
 - ./argocd.ingress-route.yaml
-- ./grafana.ingress-route.yaml
+# - ./grafana.ingress-route.yaml
 # - ./kube-prometheus.yaml
-- ./prometheus.ingress-route.yaml
+# - ./prometheus.ingress-route.yaml
 - ./traefik-dashboard.ingress-route.yaml
