@@ -72,4 +72,4 @@ spec:
              service:
                name: traefik
                port:
-                 name: '80'
+                 number: 80
