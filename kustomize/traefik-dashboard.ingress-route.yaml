@@ -51,27 +51,27 @@ spec:
           ingress:
             class: traefik
 ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: traefik-roelvandegrint-com-ingress
-#   namespace: kube-system
-#   annotations:
-#     traefik.ingress.kubernetes.io/router.entrypoints: websecure
-#     cert-manager.io/issuer: letsencrypt-staging-issuer
-# spec:
-#   tls:
-#     - hosts:
-#       - traefik.roelvandegrint.com
-#     secretName: treafik-ingress-http-staging
-#   rules:
-#     - host: traefik.roelvandegrint.com
-#       http:
-#         paths:
-#           - path: /
-#             pathType: Prefix
-#             backend:
-#               service:
-#                 name: traefik
-#                 port:
-#                   number: 80
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-roelvandegrint-com-ingress
+  namespace: kube-system
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    cert-manager.io/issuer: letsencrypt-staging-issuer
+spec:
+  tls:
+    - hosts:
+        - traefik.roelvandegrint.com
+    secretName: treafik-ingress-http-staging
+  rules:
+    - host: traefik.roelvandegrint.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: traefik
+                port:
+                  number: 80
