@@ -61,10 +61,10 @@ metadata:
 spec:
  tls:
    - hosts:
-       - treafik.roelvandegrint.com
+       - traefik.roelvandegrint.com
      secretName: treafik-ingress-http-staging
  rules:
-   - host: treafik.roelvandegrint.com
+   - host: traefik.roelvandegrint.com
      http:
        paths:
          - path: /
