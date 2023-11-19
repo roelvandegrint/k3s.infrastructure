@@ -98,7 +98,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
  name: letsencrypt-production-http
- namespace: whoami
+ namespace: argocd
 spec:
  acme:
    email: roelvandegrint@gmail.com
