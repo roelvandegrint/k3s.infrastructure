@@ -1,17 +1,17 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: traefik.k3s-ingressroute
-  namespace: kube-system
-spec:
-  entryPoints:
-    - websecure
-  routes:
-  - match: Host(`traefik.k3s`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
-    kind: Rule
-    services:
-    - name: api@internal
-      kind: TraefikService
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: traefik.k3s-ingressroute
+#   namespace: kube-system
+# spec:
+#   entryPoints:
+#     - websecure
+#   routes:
+#   - match: Host(`traefik.k3s`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
+#     kind: Rule
+#     services:
+#     - name: api@internal
+#       kind: TraefikService
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Issuer
