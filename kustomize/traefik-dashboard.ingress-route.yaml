@@ -1,77 +1,97 @@
-# apiVersion: traefik.containo.us/v1alpha1
-# kind: IngressRoute
-# metadata:
-#   name: traefik.k3s-ingressroute
-#   namespace: kube-system
-# spec:
-#   entryPoints:
-#     - websecure
-#   routes:
-#   - match: Host(`traefik.k3s`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
-#     kind: Rule
-#     services:
-#     - name: api@internal
-#       kind: TraefikService
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Issuer
-# metadata:
-#   name: letsencrypt-staging-issuer
-#   namespace: kube-system
-# spec:
-#   acme:
-#     email: roelvandegrint@gmail.com
-#     # We use the staging server here for testing to avoid hitting
-#     server: https://acme-staging-v02.api.letsencrypt.org/directory
-#     privateKeySecretRef:
-#       # if not existing, it will register a new account and stores it
-#       name: letsencrypt-staging-issuer-account-key
-#     solvers:
-#       - http01:
-#           # The ingressClass used to create the necessary ingress routes
-#           ingress:
-#             class: traefik
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Issuer
-# metadata:
-#   name: letsencrypt-production-issuer
-#   namespace: kube-system
-# spec:
-#   acme:
-#     email: roelvandegrint@gmail.com
-#     # We use the staging server here for testing to avoid hitting
-#     server: https://acme-v02.api.letsencrypt.org/directory
-#     privateKeySecretRef:
-#       # if not existing, it will register a new account and stores it
-#       name: letsencrypt-production-issuer-account-key
-#     solvers:
-#       - http01:
-#           # The ingressClass used to create the necessary ingress routes
-#           ingress:
-#             class: traefik
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#  name: traefik.roelvandegrint.com-ingress
-#  namespace: kube-system
-#  annotations:
-#   traefik.ingress.kubernetes.io/router.entrypoints: websecure
-#   cert-manager.io/issuer: letsencrypt-staging-issuer
-# spec:
-#  tls:
-#    - hosts:
-#        - traefik.roelvandegrint.com
-#      secretName: traefik-ingress-http-staging
-#  rules:
-#    - host: traefik.roelvandegrint.com
-#      http:
-#        paths:
-#          - path: /
-#            pathType: Prefix
-#            backend:
-#              service:
-#                name: traefik
-#                port:
-#                  number: 80
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik.k3s-ingressroute
+  namespace: kube-system
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`traefik.k3s`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
+    kind: Rule
+    services:
+    - name: api@internal
+      kind: TraefikService
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: traefik-dashboard
+  namespace: kube-system
+  labels:
+    app.kubernetes.io/instance: traefik
+    app.kubernetes.io/name: traefik-dashboard
+spec:
+  type: ClusterIP
+  ports:
+  - name: traefik
+    port: 9000
+    targetPort: traefik
+    protocol: TCP
+  selector:
+    app.kubernetes.io/instance: traefik-kube-system
+    app.kubernetes.io/name: traefik
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: traefik.roelvandegrint.com-ingress
+ namespace: kube-system
+ annotations:
+  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  cert-manager.io/issuer: letsencrypt-production-issuer
+spec:
+ tls:
+   - hosts:
+       - traefik.roelvandegrint.com
+     secretName: traefik-ingress-http-staging
+ rules:
+   - host: traefik.roelvandegrint.com
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: traefik-dashboard
+               port:
+                 number: 9000
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-staging-issuer
+  namespace: kube-system
+spec:
+  acme:
+    email: roelvandegrint@gmail.com
+    # We use the staging server here for testing to avoid hitting
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # if not existing, it will register a new account and stores it
+      name: letsencrypt-staging-issuer-account-key
+    solvers:
+      - http01:
+          # The ingressClass used to create the necessary ingress routes
+          ingress:
+            class: traefik
+---
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-production-issuer
+  namespace: kube-system
+spec:
+  acme:
+    email: roelvandegrint@gmail.com
+    # We use the staging server here for testing to avoid hitting
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      # if not existing, it will register a new account and stores it
+      name: letsencrypt-production-issuer-account-key
+    solvers:
+      - http01:
+          # The ingressClass used to create the necessary ingress routes
+          ingress:
+            class: traefik
+---

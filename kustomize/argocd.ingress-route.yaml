@@ -57,7 +57,7 @@ metadata:
  namespace: argocd
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  cert-manager.io/issuer: letsencrypt-staging-http
+  cert-manager.io/issuer: letsencrypt-production-http
 spec:
  tls:
    - hosts:
