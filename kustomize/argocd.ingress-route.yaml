@@ -62,7 +62,7 @@ spec:
  tls:
    - hosts:
        - argocd.roelvandegrint.com
-     secretName: argocd-ingress-http-staging
+     secretName: argocd-ingress-http-production
  rules:
    - host: argocd.roelvandegrint.com
      http:

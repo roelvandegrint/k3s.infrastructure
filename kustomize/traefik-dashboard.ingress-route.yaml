@@ -44,7 +44,7 @@ spec:
  tls:
    - hosts:
        - traefik.roelvandegrint.com
-     secretName: traefik-ingress-http-staging
+     secretName: traefik-ingress-http-production
  rules:
    - host: traefik.roelvandegrint.com
      http:
