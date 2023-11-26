@@ -4,15 +4,17 @@ metadata:
   name: base-infrastructure
   namespace: argocd
 spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"] 
   generators:
   - git:
       repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
       directories:
-      - path: kustomize/argocd-additions
+      - path: kustomize/argocd
   template:
     metadata:
-      name: '{{path.basename}}'
+      name: '{{ .path.basename }}'
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
@@ -21,7 +23,7 @@ spec:
       source:
         repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{ .path.path }}'
       destination:
         namespace: argocd
         server: https://kubernetes.default.svc
