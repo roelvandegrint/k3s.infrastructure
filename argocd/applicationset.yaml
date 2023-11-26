@@ -9,10 +9,10 @@ spec:
       repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
       directories:
-      - path: kustomize
+      - path: kustomize/*
   template:
     metadata:
-      name: base-infrastructure
+      name: '{{path.basename}}'
       namespace: argocd
       finalizers:
       - resources-finalizer.argocd.argoproj.io
