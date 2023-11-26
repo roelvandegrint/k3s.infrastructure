@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
       directories:
-      - path: kustomize/**/*
+      - path: kustomize/*
   template:
     metadata:
       name: '{{path.basename}}'
@@ -21,7 +21,7 @@ spec:
       source:
         repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
         targetRevision: HEAD
-        path: '{{path}}'
+        path: '{{path.basename}}'
       destination:
         namespace: argocd
         server: https://kubernetes.default.svc
