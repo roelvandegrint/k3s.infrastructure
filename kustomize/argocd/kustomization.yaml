@@ -1,7 +1,0 @@
-namespace: argocd
-
-resources:
-# - ./argocd-internet.ingress.yaml
-# - ./argocd-local.ingress.yaml
-# - ./certmanager-letsencrypt-production.issuer.yaml
-- ./certmanager-letsencrypt-staging.issuer.yaml

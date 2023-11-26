@@ -11,7 +11,9 @@ spec:
       repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
       directories:
-      - path: kustomize/argocd
+      - path: kustomize/*
+      - path: kustomize/traefik
+        exclude: true
   template:
     metadata:
       name: '{{ .path.basename }}'
