@@ -1,13 +1,15 @@
+---
 apiVersion: v1
 kind: Secret
 metadata:
-  name: test-repository
+  name: test-repository-ssh
   namespace: argocd
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: git
   url: git@github.com:roelvandegrint/test.git
+  name: GitHub SSH
   sshPrivateKey: |
     -----BEGIN OPENSSH PRIVATE KEY-----
     b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABFwAAAAdzc2gtcn
@@ -27,7 +29,7 @@ stringData:
     +mbSIv+GHKpUriV9zSfgM0uzdM77pvYWaKJS3sciGmhyf6QLfWC/UgwmA4DozYmDHM3v43
     e7ONA5qwX3a17cpzgfYmvS86k0lf//EBq6BuMRkh1YJxFpTK2Ra//JIEsrp2lEBW/U9L3l
     +PadQ/copbmnDa2hB9MK2XYiqwJdZCbTqR3KpVttOSN7AAAAgEwlcvjxUKF1hd0v/N/2wH
-    LFr3aIo2A8pxAFh/pacnE8zaAk7lc`eh5H9P9dr6xBbcQpItCBw5H8DVJooimpPWE3+sy20
+    LFr3aIo2A8pxAFh/pacnE8zaAk7lceh5H9P9dr6xBbcQpItCBw5H8DVJooimpPWE3+sy20
     tNMgRDvpru3LndFtGlt3NZ1bnKiMUx1siJ4XUQGWaANGjOTBt5ql2biF+e0QfVwm0X3LhT
     os/YGl8ZSDAAAAgQD1tEmnjtQuicPJNxwx+oKSaelWRMeonxc0vVYE8RBQGMrbu+Xz9mPl
     gdz1zfneNxEfUupYLsc5wZCRhYR4LdjAD4ccmvq7yBqT1023vDIRfdtT7sE9/MNC/5Du3w
@@ -36,3 +38,4 @@ stringData:
     8+MSdty5KE/DY6EaTchcCjHcql6o61UvA9KO8uABB7M/sm9jxINQ/h+mFdPneSa4YBsiy0
     +xwybXgd8nvf6WcAAAAUcm9lbEBubGxlcTA0MTMwMDIxOTgBAgMEBQYH
     -----END OPENSSH PRIVATE KEY-----
+---
