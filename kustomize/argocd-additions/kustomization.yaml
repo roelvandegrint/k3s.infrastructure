@@ -3,6 +3,6 @@ namespace: argocd
 resources:
 - ./argocd-internet.ingress.yaml
 - ./argocd-local.ingress.yaml
-- ./argocd.repositories.yaml
+# - ./argocd.repositories.yaml
 - ./certmanager-letsencrypt-production.issuer.yaml
 - ./certmanager-letsencrypt-staging.issuer.yaml
