@@ -1,15 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: prometheus.k3s-ingress
+ name: prometheus.roelvandegrint.com-ingress
  annotations:
-  traefik.ingress.kubernetes.io/router.entrypoints: web
+  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  cert-manager.io/issuer: letsencrypt-staging-http
 spec:
  tls:
    - hosts:
-       - prometheus.k3s
+       - prometheus.roelvandegrint.com
+     secretName: prometheus-ingress-http-staging
  rules:
-   - host: prometheus.k3s
+   - host: prometheus.roelvandegrint.com
      http:
        paths:
          - path: /
