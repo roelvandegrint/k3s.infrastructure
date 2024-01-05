@@ -1,2 +1,2 @@
-resources:
-- ./kube-prometheus-stack.yaml
+# resources:
+# - ./kube-prometheus-stack.yaml
