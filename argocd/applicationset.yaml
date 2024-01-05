@@ -12,6 +12,9 @@ spec:
       revision: HEAD
       directories:
       - path: kustomize/*
+      directories:
+      - path: kustomize/kube-prometheus-stack
+        ignore: true
   template:
     metadata:
       name: '{{ .path.basename }}'
