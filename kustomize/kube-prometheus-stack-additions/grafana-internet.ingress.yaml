@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: grafana.roelvandegrint.com-ingress
+ annotations:
+  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  cert-manager.io/issuer: letsencrypt-staging-http
+spec:
+  tls:
+  - hosts:
+    - grafana.roelvandegrint.com
+    secretName: grafana-ingress-http-staging
+  rules:
+  - host: grafana.roelvandegrint.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kube-prometheus-stack-grafana
+            port:
+              number: 80
