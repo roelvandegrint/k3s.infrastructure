@@ -1,3 +1,5 @@
+namespace: kube-prometheus-stack
+
 helmCharts:
 - name: kube-prometheus-stack
   includeCRDs: true
