@@ -3,6 +3,6 @@ namespace: kube-prometheus-stack
 resources:
 - ./certmanager-letsencrypt-production.issuer.yaml
 - ./certmanager-letsencrypt-staging.issuer.yaml
-- ./prometheus-internet.ingress.yml
-- ./prometheus-local.ingress.yml
+- ./prometheus-internet.ingress.yaml
+- ./prometheus-local.ingress.yaml
 
