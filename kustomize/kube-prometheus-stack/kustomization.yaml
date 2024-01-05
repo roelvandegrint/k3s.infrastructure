@@ -5,4 +5,4 @@ helmCharts:
   includeCRDs: true
   releaseName: kube-prometheus-stack
   version: 55.6.0
-  repo: argocd/applicationset.kustomize.yaml
+  repo:  https://prometheus-community.github.io/helm-charts
