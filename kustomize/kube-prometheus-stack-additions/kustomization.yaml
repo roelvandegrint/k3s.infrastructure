@@ -1,4 +1,4 @@
-namespace: kube-system
+namespace: kube-prometheus-stack
 
 resources:
 - ./certmanager-letsencrypt-production.issuer.yaml
