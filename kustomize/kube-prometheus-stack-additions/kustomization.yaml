@@ -1,4 +1,4 @@
-namespace: kube-prometheus-stack
+namespace: monitoring
 
 resources:
 - ./alertmanager-internet.ingress.yaml
