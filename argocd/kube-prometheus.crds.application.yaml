@@ -13,5 +13,8 @@ spec:
     namespace: monitoring
     server: https://kubernetes.default.svc
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - ServerSideApply=true
