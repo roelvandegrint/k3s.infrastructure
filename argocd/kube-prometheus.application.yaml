@@ -1,18 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kube-prometheus-crds
+  name: kube-prometheus
   namespace: argocd
 spec:
   project: default
   source:
-    chart: kube-prometheus-stack
     repoURL: https://github.com/prometheus-operator/kube-prometheus
     targetRevision: release-0.13
-    path: manifests/setup
+    path: manifests
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc
-  syncPolicy:
-    syncOptions:
-      - ServerSideApply=true
