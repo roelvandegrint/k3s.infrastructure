@@ -1,0 +1,5 @@
+namespace: kubernetes-dashboard
+
+resources:
+- ./admin-user.serviceaccount.yaml
+- ./admin-user.clusterrolebinding.yaml
