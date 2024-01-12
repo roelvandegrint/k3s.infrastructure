@@ -4,12 +4,12 @@ metadata:
  name: alertmanager.roelvandegrint.com-ingress
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  cert-manager.io/issuer: letsencrypt-staging-http
+  cert-manager.io/issuer: letsencrypt-production-http
 spec:
   tls:
   - hosts:
     - alertmanager.roelvandegrint.com
-    secretName: alertmanager-ingress-http-staging
+    secretName: alertmanager-ingress-http-production
   rules:
   - host: alertmanager.roelvandegrint.com
     http:

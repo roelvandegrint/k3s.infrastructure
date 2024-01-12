@@ -5,12 +5,12 @@ metadata:
  namespace: monitoring
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  cert-manager.io/issuer: letsencrypt-staging-http
+  cert-manager.io/issuer: letsencrypt-production-http
 spec:
  tls:
    - hosts:
        - prometheus.roelvandegrint.com
-     secretName: prometheus-ingress-http-staging
+     secretName: prometheus-ingress-http-production
  rules:
    - host: prometheus.roelvandegrint.com
      http:

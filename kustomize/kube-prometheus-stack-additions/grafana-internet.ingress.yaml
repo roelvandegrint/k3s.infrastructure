@@ -4,12 +4,12 @@ metadata:
  name: grafana.roelvandegrint.com-ingress
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  cert-manager.io/issuer: letsencrypt-staging-http
+  cert-manager.io/issuer: letsencrypt-production-http
 spec:
   tls:
   - hosts:
     - grafana.roelvandegrint.com
-    secretName: grafana-ingress-http-staging
+    secretName: grafana-ingress-http-production
   rules:
   - host: grafana.roelvandegrint.com
     http:
