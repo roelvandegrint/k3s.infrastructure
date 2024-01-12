@@ -1,11 +1,11 @@
 namespace: monitoring
 
 resources:
-- ./alertmanager-internet.ingress.yaml
-- ./alertmanager-local.ingress.yaml
+# - ./alertmanager-internet.ingress.yaml
+# - ./alertmanager-local.ingress.yaml
 - ./certmanager-letsencrypt-production.issuer.yaml
 - ./certmanager-letsencrypt-staging.issuer.yaml
-- ./grafana-internet.ingress.yaml
-- ./grafana-local.ingress.yaml
+# - ./grafana-internet.ingress.yaml
+# - ./grafana-local.ingress.yaml
 - ./prometheus-internet.ingress.yaml
 - ./prometheus-local.ingress.yaml
