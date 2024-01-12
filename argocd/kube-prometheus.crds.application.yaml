@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/prometheus-operator/kube-prometheus.git
-    targetRevision: release-0.13
-    path: manifests/setup
+    repoURL: https://github.com/roelvandegrint/k3s.kube-prometheus.git
+    targetRevision: HEAD
+    path: manifests/setup 
   destination:
     namespace: monitoring
     server: https://kubernetes.default.svc
