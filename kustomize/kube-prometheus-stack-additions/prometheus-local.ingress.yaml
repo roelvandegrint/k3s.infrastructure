@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
  name: prometheus.k3s-ingress
+ namespace: monitoring
  annotations:
   traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
