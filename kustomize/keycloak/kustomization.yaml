@@ -1,3 +1,4 @@
 namespace: keycloak
 
-resources: []
+resources:
+- https://raw.githubusercontent.com/keycloak/keycloak-quickstarts/latest/kubernetes/keycloak.yaml
