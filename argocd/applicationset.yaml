@@ -12,6 +12,15 @@ spec:
       revision: HEAD
       directories:
       - path: kustomize/*
+        # exclude: true
+      # - path: kustomize/kube-prometheus-stack-additions
+      #   exclude: true
+      # - path: kustomize/kubernetes-dashboard
+      #   exclude: true
+      # - path: kustomize/traefik
+      #   exclude: true
+      # - path: kustomize/keycloak
+      #   exclude: true
   template:
     metadata:
       name: '{{ .path.basename }}'
