@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: prometheus-server-gateway
+  name: prometheus-gateway
   namespace: monitoring
 spec:
   # The selector matches the ingress gateway pod labels.
@@ -28,7 +28,7 @@ spec:
   hosts:
   - "*"
   gateways:
-  - prometheus-server-gateway
+  - prometheus-gateway
   http:
   - match:
     - uri:

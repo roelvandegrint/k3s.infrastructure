@@ -12,7 +12,7 @@ spec:
       revision: HEAD
       directories:
       - path: kustomize/argocd-additions
-      # - path: kustomize/kube-prometheus-stack-additions
+      - path: kustomize/kube-prometheus-stack-additions
       #   exclude: true
       # - path: kustomize/kubernetes-dashboard
         # exclude: true

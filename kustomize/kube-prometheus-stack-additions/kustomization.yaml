@@ -1,5 +1,7 @@
 resources:
+- ./alertmanager.gateway.yaml
 - ./alertmanager.tls-certificate.production.yaml
+- ./grafana.gateway.yaml
 - ./grafana.tls-certificate.production.yaml
 - ./prometheus.gateway.yaml
 - ./prometheus.tls-certificate.production.yaml

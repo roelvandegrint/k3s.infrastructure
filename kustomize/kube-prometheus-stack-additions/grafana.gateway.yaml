@@ -1,8 +1,8 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: argocd-server-gateway
-  namespace: argocd
+  name: grafana-gateway
+  namespace: monitoring
 spec:
   # The selector matches the ingress gateway pod labels.
   # If you installed Istio using Helm following the standard documentation, this would be "istio=ingress"
@@ -15,26 +15,26 @@ spec:
       protocol: HTTPS
     tls:
       mode: SIMPLE
-      credentialName: argocd-roelvandegrint-com-domain-cert-production # This should match the Certificate secretName
+      credentialName: grafana-roelvandegrint-com-domain-cert-production # This should match the Certificate secretName
     hosts:
-    - argocd.roelvandegrint.com # This should match a DNS name in the Certificate
+    - grafana.roelvandegrint.com # This should match a DNS name in the Certificate
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: argocd
-  namespace: argocd
+  name: grafana
+  namespace: monitoring
 spec:
   hosts:
   - "*"
   gateways:
-  - argocd-server-gateway
+  - grafana-gateway
   http:
   - match:
     - uri:
         prefix: /
     route:
     - destination:
-        host: argocd-server
+        host: kube-prometheus-stack-grafana
         port:
           number: 80
