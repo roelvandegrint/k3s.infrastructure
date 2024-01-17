@@ -1,9 +1,11 @@
 namespace: argocd
 
 resources:
-- ./argocd-internet.ingress.yaml
-- ./argocd-local.ingress.yaml
+# - ./argocd-internet.ingress.yaml
+# - ./argocd-local.ingress.yaml
 # - ./argocd-repository-credentials.secret.yaml
 # - ./argocd.repositories.yaml
-- ./certmanager-letsencrypt-production.issuer.yaml
-- ./certmanager-letsencrypt-staging.issuer.yaml
+# - ./certmanager-letsencrypt-production.issuer.yaml
+# - ./certmanager-letsencrypt-staging.issuer.yaml
+  - ./argocd.gateway.yaml
+  - ./argocd.tls-certificate.production.yaml
