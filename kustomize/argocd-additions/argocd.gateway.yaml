@@ -2,6 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: argocd-server-gateway
+  namespace: argocd
 spec:
   # The selector matches the ingress gateway pod labels.
   # If you installed Istio using Helm following the standard documentation, this would be "istio=ingress"
@@ -22,6 +23,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: argocd
+  namespace: argocd
 spec:
   hosts:
   - "*"

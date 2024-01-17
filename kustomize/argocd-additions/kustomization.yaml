@@ -1,4 +1,4 @@
-namespace: argocd
+# namespace: argocd
 
 resources:
 # - ./argocd-internet.ingress.yaml
