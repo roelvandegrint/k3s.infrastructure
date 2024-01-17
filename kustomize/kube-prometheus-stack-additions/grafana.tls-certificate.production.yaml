@@ -1,0 +1,22 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana-roelvandegrint-com-domain-cert-production
+  namespace: istio-system
+spec:
+  secretName: grafana-roelvandegrint-com-domain-cert-production
+  # duration: 2160h # 90d
+  # renewBefore: 360h # 15d
+  # isCA: false
+  # privateKey:
+    # algorithm: RSA
+    # encoding: PKCS1
+    # size: 2048
+  usages:
+    - server auth
+  dnsNames:
+    - "grafana.roelvandegrint.com"
+  issuerRef:
+    name: letsencrypt-production-http
+    kind: Issuer
+    group: cert-manager.io
