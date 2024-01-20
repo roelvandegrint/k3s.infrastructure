@@ -13,6 +13,7 @@ spec:
       directories:
       - path: kustomize/argocd-additions
       - path: kustomize/kube-prometheus-stack-additions
+      - path: kustomize/cert-manager
       #   exclude: true
       # - path: kustomize/kubernetes-dashboard
         # exclude: true
