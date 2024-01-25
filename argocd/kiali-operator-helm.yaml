@@ -1,22 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kube-prometheus-stack
+  name: kiali-operator
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: 'https://prometheus-community.github.io/helm-charts'
-    targetRevision: 55.8.1
-    chart: kube-prometheus-stack
+    repoURL: https://kiali.org/helm-charts
+    targetRevision: 1.78.0
+    chart: kiali-operator
+    helm:
+      valuesObject:
+        cr:
+          create: true
+          namespace: istio-system
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: monitoring
+    namespace: istio-system
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - ServerSideApply=true
