@@ -12,6 +12,7 @@ spec:
       revision: HEAD
       directories:
       - path: kustomize/argocd-additions
+      - path: kustomize/kiali-additions
       - path: kustomize/kube-prometheus-stack-additions
       - path: kustomize/cert-manager
       #   exclude: true

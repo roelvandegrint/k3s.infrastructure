@@ -1,0 +1,3 @@
+resources:
+- ./kiali.gateway.yaml
+- ./kiali.tls-certificate.production.yaml
