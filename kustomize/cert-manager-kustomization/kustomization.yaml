@@ -1,13 +1,4 @@
-namespace: cert-manager
-
-helmCharts:
-- name: cert-manager
-  # includeCRDs: false
-  valuesInline:
-    installCRDs: true
-  releaseName: cert-manager
-  version: v1.13.3
-  repo: https://charts.jetstack.io
+namespace: istio-system
 
 resources:
 - ./cert-manager-letsencrypt-production.issuer.yaml
