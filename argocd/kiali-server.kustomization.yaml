@@ -8,13 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://kiali.org/helm-charts
-    targetRevision: 1.78.0
-    chart: kiali-server
-    helm:
-      valuesObject:
-        auth:
-          strategy: anonymous
+    repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+    targetRevision: HEAD
+    path: kustomize/kiali-server-kustomization
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: istio-system
