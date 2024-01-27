@@ -2,3 +2,5 @@ namespace: istio-system
 
 resources:
 - ./kiali.yaml
+- ./kiali.gateway.yaml
+- ./kiali.tls-certificate.production.yaml
