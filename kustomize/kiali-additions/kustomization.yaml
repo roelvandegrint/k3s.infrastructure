@@ -1,3 +1,5 @@
+namespace: kiali-operator
+
 resources:
 - ./certmanager-letsencrypt-production.issuer.yaml
 - ./kiali.gateway.yaml
