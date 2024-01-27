@@ -4,7 +4,7 @@ metadata:
   name: kiali-roelvandegrint-com-domain-cert-production
   namespace: istio-system
 spec:
-  secretName: kiali-roelvandegrint-com-domain-cert-production
+  secretName: kiali-roelvandegrint-com-domain-cert-staging
   # duration: 2160h # 90d
   # renewBefore: 360h # 15d
   # isCA: false
