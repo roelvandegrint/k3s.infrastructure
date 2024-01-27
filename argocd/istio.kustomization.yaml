@@ -10,10 +10,10 @@ spec:
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
     targetRevision: HEAD
-    path: kustomize/cert-manager-kustomization
+    path: kustomize/istio-kustomization
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: cert-manager
+    namespace: istio-system
   syncPolicy:
     automated:
       prune: true
