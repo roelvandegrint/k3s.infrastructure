@@ -5,4 +5,4 @@ metadata:
 spec:
   external_services:
     prometheus:
-      url: http://kube-prometheus-stack-prometheus.monitoring.svc.local:9090
+      url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
