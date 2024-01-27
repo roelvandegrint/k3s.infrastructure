@@ -4,7 +4,7 @@ metadata:
   name: kiali-roelvandegrint-com-domain-cert-production
   namespace: istio-system
 spec:
-  secretName: kiali-roelvandegrint-com-domain-cert-staging
+  secretName: kiali-roelvandegrint-com-domain-cert-production
   # duration: 2160h # 90d
   # renewBefore: 360h # 15d
   # isCA: false
@@ -17,6 +17,6 @@ spec:
   dnsNames:
     - "kiali.roelvandegrint.com"
   issuerRef:
-    name: letsencrypt-staging-http
+    name: letsencrypt-production-http
     kind: Issuer
     group: cert-manager.io
