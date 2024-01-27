@@ -10,12 +10,12 @@ spec:
     istio: ingressgateway # use istio default controller
   servers:
   - port:
-      number: 443
-      name: https
-      protocol: HTTPS
-    tls:
-      mode: SIMPLE
-      credentialName: argocd-roelvandegrint-com-domain-cert-production # This should match the Certificate secretName
+      number: 80
+      name: http
+      protocol: HTTP
+    # tls:
+      # mode: SIMPLE
+      # credentialName: argocd-roelvandegrint-com-domain-cert-production # This should match the Certificate secretName
     hosts:
     - argocd.roelvandegrint.com # This should match a DNS name in the Certificate
 ---

@@ -16,6 +16,6 @@ spec:
   dnsNames:
     - "kiali.roelvandegrint.com"
   issuerRef:
-    name: letsencrypt-production-http
+    name: letsencrypt-staging-http
     kind: Issuer
     group: cert-manager.io

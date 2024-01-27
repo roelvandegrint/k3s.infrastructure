@@ -10,11 +10,11 @@ spec:
   - git:
       repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       revision: HEAD
-      directories:
-      - path: kustomize/argocd-additions
-      - path: kustomize/kiali-additions
-      - path: kustomize/kube-prometheus-stack-additions
-      - path: kustomize/cert-manager
+      directories: []
+      # - path: kustomize/argocd-additions
+      # - path: kustomize/kiali-additions
+      # - path: kustomize/kube-prometheus-stack-additions
+      # - path: kustomize/cert-manager
       #   exclude: true
       # - path: kustomize/kubernetes-dashboard
         # exclude: true
