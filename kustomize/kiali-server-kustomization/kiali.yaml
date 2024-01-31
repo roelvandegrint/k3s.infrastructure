@@ -8,3 +8,5 @@ spec:
       url: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
     grafana:
       in_cluster_url: http://kube-prometheus-stack-grafana.monitoring.svc.cluster.local:80
+    tracing:
+      in_cluster_url: http://simplest-query.observability.svc.cluster.local:16685
