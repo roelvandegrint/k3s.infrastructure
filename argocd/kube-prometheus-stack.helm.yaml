@@ -13,7 +13,9 @@ spec:
     chart: kube-prometheus-stack
     helm:
       valuesObject:
-        alertmanager.alertmanagerSpec.replicas: 2
+        alertmanager:
+          alertmanagerSpec:
+            replicas: 3
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: monitoring
