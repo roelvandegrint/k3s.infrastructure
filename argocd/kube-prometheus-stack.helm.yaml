@@ -15,7 +15,13 @@ spec:
       valuesObject:
         alertmanager:
           alertmanagerSpec:
-            replicas: 3
+            replicas: 2
+            alertmanagerConfigSelector:
+              matchLabels:
+                alertmanagerConfig: example
+            alertmanagerConfigNamespaceSelector:
+              matchLabels:
+                alertmanagerconfig: enabled
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: monitoring

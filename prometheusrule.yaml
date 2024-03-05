@@ -1,0 +1,13 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    role: alert-rules
+    release: kube-prometheus-stack
+  name: roel-prometheus-rule
+spec:
+  groups:
+  - name: ./roel.rules
+    rules:
+    - alert: RoelAlert
+      expr: vector(1)

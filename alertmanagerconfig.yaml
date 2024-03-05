@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: config-example
+  labels:
+    alertmanagerConfig: example
+spec:
+  route:
+    matchers:
+    - name: alertname
+      matchType: '='
+      value: PrometheusRuleFailures
+    receiver: slack
+  receivers:
+  - name: slack
+    slackConfigs:
+    - apiURL:
+        name: slack-webhooks
+        key: alertmanager-home.roelvandegrint.slack.com
