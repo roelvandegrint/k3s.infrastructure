@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
     targetRevision: main
-    path: applications/argo-cd
+    path: argo-cd
 
   destination:
     server: https://kubernetes.default.svc
