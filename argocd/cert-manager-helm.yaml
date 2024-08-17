@@ -7,17 +7,19 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  source:
-    repoURL: https://charts.jetstack.io
-    targetRevision: v1.13.3
-    chart: cert-manager
-    helm:
-      valuesObject:
-        installCRDs: true
+
+  sources:
+    - repoURL: https://charts.jetstack.io
+      targetRevision: v1.15.3
+      chart: cert-manager
+      helm:
+        valueFiles:
+          - $values/applications/cert-manager/values.yaml
+  
+    - repoURL: 'https://git.example.com/org/value-files.git'
+      targetRevision: cert-manager
+      ref: values
+  
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
