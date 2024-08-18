@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: argocd.roelvandegrint.com-ingress
+ annotations:
+  traefik.ingress.kubernetes.io/router.entrypoints: websecure
+  cert-manager.io/issuer: letsencrypt-production-http
+spec:
+ tls:
+   - hosts:
+       - argocd.roelvandegrint.com
+     secretName: argocd-ingress-http-production
+ rules:
+   - host: argocd.roelvandegrint.com
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: argocd-server
+               port:
+                 number: 80
