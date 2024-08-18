@@ -5,4 +5,4 @@ resources:
 # - ./certmanager-letsencrypt-staging.issuer.yaml
 - ./traefik-dashboard.service.yaml
 # - ./traefik-internet.ingress.yaml
-# - ./traefik-local.ingressroute.yaml
+- ./traefik-k3s.ingressroute.yaml
