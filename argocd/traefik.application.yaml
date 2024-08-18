@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: traefik-dashboard
+    targetRevision: main
     path: traefik
 
   destination:
