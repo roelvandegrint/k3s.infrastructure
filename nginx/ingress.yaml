@@ -4,12 +4,12 @@ metadata:
  name: nginx.roelvandegrint.com
  annotations:
   # traefik.ingress.kubernetes.io/router.entrypoints: websecure
-  cert-manager.io/issuer: letsencrypt-staging-http
+  # cert-manager.io/issuer: letsencrypt-staging-http
 spec:
- tls:
-   - hosts:
-       - nginx.roelvandegrint.com
-     secretName: nginx-ingress-http-production
+#  tls:
+#    - hosts:
+#        - nginx.roelvandegrint.com
+#      secretName: nginx-ingress-http-production
  rules:
    - host: nginx.roelvandegrint.com
      http:
