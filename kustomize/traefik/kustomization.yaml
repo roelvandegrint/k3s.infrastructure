@@ -1,8 +1,0 @@
-namespace: kube-system
-
-resources:
-- ./certmanager-letsencrypt-production.issuer.yaml
-- ./certmanager-letsencrypt-staging.issuer.yaml
-- ./traefik-dashboard.service.yaml
-- ./traefik-internet.ingress.yaml
-- ./traefik-local.ingressroute.yaml
