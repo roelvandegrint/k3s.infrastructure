@@ -14,9 +14,9 @@ spec:
       chart: cert-manager
       helm:
         valueFiles:
-          - $values/applications/cert-manager/values.yaml
+          - $values/cert-manager/values.yaml
   
-    - repoURL: 'https://git.example.com/org/value-files.git'
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       targetRevision: cert-manager
       ref: values
   
