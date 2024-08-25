@@ -4,8 +4,9 @@ metadata:
   name: whoami
   namespace: whoami
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    acme.cert-manager.io/http01-edit-in-place: "true"
     cert-manager.io/issuer: "le-example-http"
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   tls:
     - hosts:
