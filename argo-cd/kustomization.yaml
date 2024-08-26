@@ -4,9 +4,10 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-- https://raw.githubusercontent.com/argoproj/argo-cd/release-2.12/manifests/install.yaml
-- certmanager-letsencrypt-staging.issuer.yaml
-- certmanager-letsencrypt-production.issuer.yaml
+  - https://raw.githubusercontent.com/argoproj/argo-cd/release-2.12/manifests/install.yaml
+  - argocd-internet.ingress.yaml
+  - certmanager-letsencrypt-staging.issuer.yaml
+  - certmanager-letsencrypt-production.issuer.yaml
 
 components: []
 
