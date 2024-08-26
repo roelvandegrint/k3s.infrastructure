@@ -4,6 +4,7 @@ metadata:
   name: whoami
   namespace: whoami
   annotations:
+    spec.ingressClassName: traefik
     cert-manager.io/issuer: "le-example-http"
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
