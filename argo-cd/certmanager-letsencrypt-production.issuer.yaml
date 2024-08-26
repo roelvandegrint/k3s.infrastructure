@@ -12,5 +12,6 @@ spec:
       name: letsencrypt-production-issuer--account-key
   solvers:
     - http01:
-        # The ingressClass used to create the necessary ingress routes
-        ingressClassName: traefik
+        ingress:
+          # The ingressClass used to create the necessary ingress routes
+          ingressClassName: traefik
