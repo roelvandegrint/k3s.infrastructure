@@ -4,13 +4,13 @@ metadata:
   name: whoami
   namespace: whoami
   annotations:
-  #   cert-manager.io/issuer: "le-example-http"
+    cert-manager.io/issuer: "le-example-http"
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  # tls:
-  #   - hosts:
-  #       - whoami.roelvandegrint.com
-  #     secretName: tls-whoami-ingress-http
+  tls:
+    - hosts:
+        - whoami.roelvandegrint.com
+      secretName: tls-whoami-ingress-http
   rules:
     - host: whoami.roelvandegrint.com
       http:
