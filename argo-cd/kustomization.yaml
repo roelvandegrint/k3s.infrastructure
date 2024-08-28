@@ -12,4 +12,5 @@ resources:
 components: []
 
 patches:
+  - path: argocd-cm.configmap.yaml
   - path: argocd-cmd-params-cm.configmap.yaml
