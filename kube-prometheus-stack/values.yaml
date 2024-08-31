@@ -1,1 +1,8 @@
 replicas: 1
+
+prometheus:
+  ingress:
+    enabled: true
+
+    hosts:
+      - prometheus.k3s
