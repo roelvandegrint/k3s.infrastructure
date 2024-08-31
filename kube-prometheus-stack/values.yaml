@@ -1,0 +1,15 @@
+replicas: 1
+
+prometheus:
+  ingress:
+    enabled: true
+
+    hosts:
+      - prometheus.k3s
+
+grafana:
+  ingress:
+    enabled: true
+
+    hosts:
+      - grafana.k3s
