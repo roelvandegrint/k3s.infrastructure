@@ -17,7 +17,7 @@ spec:
           - $values/kube-prometheus-stack/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: kube-prometheus-stack
+      targetRevision: HEAD
       ref: values
 
   destination:
