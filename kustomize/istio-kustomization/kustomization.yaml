@@ -1,5 +1,0 @@
-namespace: istio-system
-
-resources:
-- ./cert-manager-letsencrypt-production.issuer.yaml
-- ./cert-manager-letsencrypt-staging.issuer.yaml
