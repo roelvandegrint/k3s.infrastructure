@@ -54,7 +54,7 @@ alloy:
 
       otelcol.processor.batch "default" {
         output {
-          metrics = [otelcol.exporter.debug.input]
+          metrics = [otelcol.exporter.debug.default.input]
           logs    = []
           traces  = []
         }
