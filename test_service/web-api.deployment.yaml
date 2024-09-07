@@ -3,22 +3,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: backend-service
-  name: backend-service
+    app: web-api
+  name: web-api
 spec:
   replicas: 1
   revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: backend-service
+      app: web-api
   template:
     metadata:
       labels:
-        app: backend-service
+        app: web-api
     spec:
       containers:
-        - image: docker.io/roelvandegrint/backend-service:0.2.0
-          name: backend-service
+        - image: docker.io/roelvandegrint/web-api:0.1.0
+          name: web-api
           env:
             - name: OTEL_ENDPOINT
               value: http://grafana-alloy.grafana-alloy.svc.cluster.local:4317/
