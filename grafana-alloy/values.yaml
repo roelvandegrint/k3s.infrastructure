@@ -87,8 +87,8 @@ alloy:
       }
 
       otelcol.auth.basic "default" {
-        username = ""
-        password = ""
+        username = "1742551"
+        password = "glc_eyJvIjoiMTE5ODI5OCIsIm4iOiJzdGFjay0xMDEzMjE5LWludGVncmF0aW9uLWFsbG95IiwiayI6IjNFTFUxR2N5NWdkdkNUM2J4NzMxOWQ4OSIsIm0iOnsiciI6InByb2QtZXUtd2VzdC0yIn19"
       }
 
       otelcol.exporter.otlp "default" {
