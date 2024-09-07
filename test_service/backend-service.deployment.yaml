@@ -16,7 +16,7 @@ spec:
         app: backend-service
     spec:
       containers:
-        - image: docker.io/roelvandegrint/grafana_alloy_test_backend_service:0.3.0
+        - image: docker.io/roelvandegrint/backend-service:0.1.0
           name: backend-service
           env:
             - name: OTEL_ENDPOINT
