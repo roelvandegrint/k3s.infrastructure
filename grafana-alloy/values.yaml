@@ -55,8 +55,7 @@ alloy:
       otelcol.processor.batch "default" {
         output {
           metrics = [
-            otelcol.exporter.debug.input, 
-            otelcol.exporter.prometheus.grafana_cloud_metrics.input
+            otelcol.exporter.debug.input
           ]
           logs    = []
           traces  = []
