@@ -22,3 +22,5 @@ spec:
           env:
             - name: OTEL_ENDPOINT
               value: http://grafana-alloy.grafana-alloy.svc.cluster.local:4317/
+            - name: BACKEND_API_URI
+              value: http://backend-service:8080
