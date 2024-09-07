@@ -48,15 +48,18 @@ alloy:
         output {
           metrics = [otelcol.processor.batch.default.input]
           logs    = []
-          traces  = [otelcol.processor.batch.default.input]
+          traces  = []
         }
       }
 
       otelcol.processor.batch "default" {
         output {
-          metrics = [otelcol.exporter.prometheus.grafana_cloud_metrics.input]
+          metrics = [
+            otelcol.exporter.debug.input, 
+            otelcol.exporter.prometheus.grafana_cloud_metrics.input
+          ]
           logs    = []
-          traces  = [otelcol.exporter.debug.default.input, otelcol.exporter.otlp.default.input]
+          traces  = []
         }
       }
 
@@ -83,18 +86,6 @@ alloy:
                 username = "1742551"
                 password = "glc_eyJvIjoiMTE5ODI5OCIsIm4iOiJzdGFjay0xMDEzMjE5LWludGVncmF0aW9uLWFsbG95IiwiayI6IjNFTFUxR2N5NWdkdkNUM2J4NzMxOWQ4OSIsIm0iOnsiciI6InByb2QtZXUtd2VzdC0yIn19"
             }
-        }
-      }
-
-      otelcol.auth.basic "default" {
-        username = "1742551"
-        password = "glc_eyJvIjoiMTE5ODI5OCIsIm4iOiJzdGFjay0xMDEzMjE5LWludGVncmF0aW9uLWFsbG95IiwiayI6IjNFTFUxR2N5NWdkdkNUM2J4NzMxOWQ4OSIsIm0iOnsiciI6InByb2QtZXUtd2VzdC0yIn19"
-      }
-
-      otelcol.exporter.otlp "default" {
-        client {
-          endpoint = "https://tempo-prod-10-prod-eu-west-2.grafana.net:443"
-          auth     = otelcol.auth.basic.default.handler
         }
       }
 
