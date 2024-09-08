@@ -17,7 +17,7 @@ spec:
         app: backend-service
     spec:
       containers:
-        - image: docker.io/roelvandegrint/backend-service:0.2.0
+        - image: docker.io/roelvandegrint/backend-service:0.3.0
           name: backend-service
           env:
             - name: OTEL_ENDPOINT
