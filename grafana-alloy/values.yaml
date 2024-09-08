@@ -67,12 +67,6 @@ alloy:
 
       prometheus.relabel "keep_functional" {
         forward_to = [prometheus.remote_write.grafana_cloud_metrics.receiver]
-
-        rule {
-          action        = "keep"
-          source_labels = ["__name__"]
-          regex         = "functional_"
-        }
       }
 
       prometheus.remote_write "grafana_cloud_metrics" {
