@@ -75,7 +75,7 @@ alloy:
         rule {
           action = "keep"
           source_labels = ["__name__"]
-          regex = "functional_"
+          regex = "functional_.*"
         }
       }
 
