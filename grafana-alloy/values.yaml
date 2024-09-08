@@ -61,7 +61,7 @@ alloy:
       }
 
       otelcol.exporter.prometheus "grafana_cloud_metrics" {
-        forward_to = [prometheus.remote_write.grafana_cloud_metrics.receiver]
+        forward_to = [prometheus.relabel.keep_functional.receiver]
         resource_to_telemetry_conversion = true
       }
 
