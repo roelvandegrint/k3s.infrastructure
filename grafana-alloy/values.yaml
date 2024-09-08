@@ -32,8 +32,12 @@ alloy:
     # -- Content to assign to the new ConfigMap.  This is passed into `tpl` allowing for templating from values.
     content: |-
       logging {
-        level  = "debug"
+        level  = "info"
         format = "logfmt"
+      }
+
+      livedebugging {
+        enabled = true
       }
 
       otelcol.receiver.otlp "default" {
