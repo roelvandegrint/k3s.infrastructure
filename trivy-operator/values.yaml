@@ -702,7 +702,7 @@ policiesBundle:
   # Note: The secret has to be named "trivy-operator".
   existingSecret: false
   # -- insecure is the flag to enable insecure connection to the policy bundle registry
-  insecure: false
+  insecure: true
 
 
 nodeCollector:
