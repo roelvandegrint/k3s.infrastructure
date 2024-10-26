@@ -12,7 +12,15 @@ spec:
     - repoURL: https://aquasecurity.github.io/helm-charts/
       targetRevision: 0.24.0
       chart: trivy-operator
-  
+      helm:
+        valueFiles:
+          - $values/trivy-operator/values.yaml
+
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: trivy-operator
+      ref: values
+
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: trivy-system
+`
