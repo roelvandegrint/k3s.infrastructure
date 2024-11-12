@@ -16,7 +16,7 @@ spec:
         valueFiles:
           - $values/rabbitmq-cluster-operator/values.yaml
 
-    - repoURL: https://enecomanagedcloud@dev.azure.com/enecomanagedcloud/Myriad%20-%20VPP/_git/VPP.GitOps
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure
       targetRevision: rabbitmq
       ref: values
 
