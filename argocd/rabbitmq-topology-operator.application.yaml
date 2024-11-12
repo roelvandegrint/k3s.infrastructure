@@ -13,4 +13,4 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: rabbitmq-topology-operator
+    namespace: rabbitmq-system

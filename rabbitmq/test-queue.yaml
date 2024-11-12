@@ -1,0 +1,9 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: Queue
+metadata:
+  name: test
+spec:
+  name: test-queue # name of the queue
+  rabbitmqClusterReference:
+    name: rabbit-mq
+    
