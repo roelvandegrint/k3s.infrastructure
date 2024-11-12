@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rabbitmq-topology-operator
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/roelvandegrint/k3s.infrastructure
+    targetRevision: rabbitmq
+    path: rabbitmq-topology-operator
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rabbitmq-topology-operator
