@@ -1,6 +1,5 @@
 resources:
   - argo-cd-system.application.yaml
-  - argo-cd.application.yaml
   - cert-manager.application.yaml
   - kube-prometheus-stack.application.yaml
   - traefik.application.yaml
