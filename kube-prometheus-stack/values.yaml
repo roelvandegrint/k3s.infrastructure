@@ -8,11 +8,7 @@ prometheus:
       - prometheus.k3s
 
   prometheusSpec:
-    serviceMonitorSelector: {}
-
-    serviceMonitorNamespaceSelector:
-      matchLabels:
-        prometheus: cluster-monitoring
+    serviceMonitorNamespaceSelector: {}
 
 grafana:
   ingress:
