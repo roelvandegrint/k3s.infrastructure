@@ -8,8 +8,11 @@ prometheus:
       - prometheus.k3s
 
   prometheusSpec:
-    serviceMonitorNamespaceSelector: {}
-    serviceMonitorSelector: {}
+    serviceMonitorNamespaceSelector:
+      matchLabels: {}
+
+    serviceMonitorSelector:
+      matchLabels: {}
 
 grafana:
   ingress:
