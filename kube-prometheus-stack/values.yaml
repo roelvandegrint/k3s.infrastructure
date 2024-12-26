@@ -6,6 +6,10 @@ prometheus:
 
     hosts:
       - prometheus.k3s
+    
+  prometheusSpec:
+    serviceMonitorNamespaceSelector: {}
+    serviceMonitorSelector: {}
 
 grafana:
   ingress:
