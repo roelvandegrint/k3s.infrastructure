@@ -7,6 +7,13 @@ prometheus:
     hosts:
       - prometheus.k3s
 
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
+
+    serviceMonitorNamespaceSelector: {}
+
+    serviceMonitorSelector: {}
+
 grafana:
   ingress:
     enabled: true
