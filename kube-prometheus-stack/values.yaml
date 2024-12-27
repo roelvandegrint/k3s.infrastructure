@@ -7,12 +7,12 @@ prometheus:
     hosts:
       - prometheus.k3s
 
-  prometheusSpec:
-    serviceMonitorNamespaceSelector:
-      matchLabels: {}
+  # prometheusSpec:
+  #   serviceMonitorNamespaceSelector:
+  #     matchLabels: {}
 
-    serviceMonitorSelector:
-      matchLabels: {}
+  #   serviceMonitorSelector:
+  #     matchLabels: {}
 
 grafana:
   ingress:
