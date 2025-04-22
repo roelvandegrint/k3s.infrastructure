@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "redhat.vscode-yaml",
+        "shyykoserhiy.git-autoconfig",
+        "donjayamanne.githistory",
+        "github.vscode-pull-request-github"
+    ]
+}
