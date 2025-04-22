@@ -1,3 +1,4 @@
 resources:
-  - ./default.yaml
-  - ./study-buddy.yaml
+  - default.yaml
+  - study-buddy.yaml
+  - platform.yaml
