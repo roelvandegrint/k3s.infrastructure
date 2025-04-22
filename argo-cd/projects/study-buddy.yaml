@@ -13,5 +13,5 @@ spec:
     - "*"
   # Only permit applications to deploy to the guestbook namespace in the same cluster
   destinations:
-    - namespace: study-buddy
+    - namespace: study-buddy-*
       server: https://kubernetes.default.svc
