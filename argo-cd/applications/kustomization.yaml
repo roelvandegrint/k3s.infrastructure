@@ -1,4 +1,3 @@
 resources:
   - argo-cd-system.application.yaml
-  - cert-manager.application.yaml
   - traefik.application.yaml
