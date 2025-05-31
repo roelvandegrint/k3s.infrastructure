@@ -1,2 +1,2 @@
-resources:
-  - argo-cd-system.application.yaml
+resources: []
+  # - argo-cd-system.application.yaml

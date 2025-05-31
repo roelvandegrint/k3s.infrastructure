@@ -1,16 +1,16 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: argo-cd-system
-  namespace: argocd
-spec:
-  project: platform
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: argo-cd-system
+#   namespace: argocd
+# spec:
+#   project: platform
 
-  source:
-    repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: phase_out
-    path: argo-cd-system
+#   source:
+#     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
+#     targetRevision: phase_out
+#     path: argo-cd-system
 
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: argocd
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: argocd
