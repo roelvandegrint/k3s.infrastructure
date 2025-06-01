@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd
+  name: argocd-projects
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,8 +10,8 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: main
-    path: argo-cd
+    targetRevision: phase_out
+    path: argocd/projects
 
   destination:
     server: https://kubernetes.default.svc
