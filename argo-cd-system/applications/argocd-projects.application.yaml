@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: phase_out
+    targetRevision: HEAD
     path: argocd/projects
 
   destination:

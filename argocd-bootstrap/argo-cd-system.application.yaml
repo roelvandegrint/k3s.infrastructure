@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: phase_out
+    targetRevision: HEAD
     path: argo-cd-system
 
   destination:
