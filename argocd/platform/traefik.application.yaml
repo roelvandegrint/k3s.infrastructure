@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-cd-system
+  name: traefik
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,9 +10,14 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: main
-    path: argo-cd-system
+    targetRevision: HEAD
+    path: traefik
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd
+    namespace: kube-system
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
