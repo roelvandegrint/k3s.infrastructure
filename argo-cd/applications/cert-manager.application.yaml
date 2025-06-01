@@ -17,7 +17,7 @@ spec:
           - $values/cert-manager/values.yaml
   
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: main
+      targetRevision: phase_out
       ref: values
   
   destination:

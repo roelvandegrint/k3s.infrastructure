@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: main
+    targetRevision: phase_out
     path: traefik
 
   destination:
