@@ -1,6 +1,6 @@
 replicas: 1
 
-alertManager:
+alertmanager:
   ## Alertmanager configuration directives
   ## ref: https://prometheus.io/docs/alerting/configuration/#configuration-file
   ##      https://prometheus.io/webtools/alerting/routing-tree-editor/
