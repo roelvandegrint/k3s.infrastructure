@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: ghcr.io/akuity/kargo-charts
     chart: kargo
-    targetRevision: <desired version of Kargo>
+    targetRevision: 1.8.3
     helm:
       valuesObject:
         api:
