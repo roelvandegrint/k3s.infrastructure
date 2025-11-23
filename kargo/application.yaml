@@ -19,6 +19,8 @@ spec:
             passwordHash: $2y$10$j4TnpElSqzJEr./vzkUhouNChs.OXJjBFXTH5OyqTw/jjf/0GQ87.
             tokenSigningKey: xaabZqe5R7Jt7KVV6I49aolOxIql0q3r
             tokenTTL: 24h
+          host:
+            host: kargo.roelvandegrint.com
         controller:
           logLevel: DEBUG
   syncPolicy:
