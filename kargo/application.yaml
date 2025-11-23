@@ -16,16 +16,38 @@ spec:
         valuesObject:
           api:
             adminAccount:
-              passwordHash: $2y$10$j4TnpElSqzJEr./vzkUhouNChs.OXJjBFXTH5OyqTw/jjf/0GQ87.
-              tokenSigningKey: xaabZqe5R7Jt7KVV6I49aolOxIql0q3r
+              passwordHash: $2y$10$3I8ycOZaTlptwJdrdn1f0eBO2kOt9o.0mMdzmABKOPQ6Z8rLY3jwW
+              tokenSigningKey: dIfELVYgVkAzwOfMA31ZktWpu2MTTRs6
               tokenTTL: 24h
             host: kargo.roelvandegrint.com
             ingress:
               enabled: true
               ingressClassName: traefik
+              annotations:
+                cert-manager.io/issuer: letsencrypt-production-http
+                traefik.ingress.kubernetes.io/router.entrypoints: websecure
+              tls:
+                enabled: true
+                selfSignedCert: false
+                secretName: kargo-api-ingress-cert
+            oidc:
+              enabled: true
+              issuerURL: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
+              clientID: 302fb694-21e2-43bf-a174-163de3f2fd88
+              additionalScopes: []
+              admins:
+                claims:
+                  groups:
+                    - 483f858d-b9a8-4ed8-990a-0b2d0fafb2d4
+              users:
+                claims:
+                  groups:
+                    - developers
+            tls:
+              enabled: false
           controller:
             logLevel: DEBUG
-    
+
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       targetRevision: implement_kargo
       path: kargo/base
