@@ -8,23 +8,28 @@ spec:
   destination:
     namespace: kargo
     server: https://kubernetes.default.svc
-  source:
-    repoURL: ghcr.io/akuity/kargo-charts
-    chart: kargo
-    targetRevision: 1.8.3
-    helm:
-      valuesObject:
-        api:
-          adminAccount:
-            passwordHash: $2y$10$j4TnpElSqzJEr./vzkUhouNChs.OXJjBFXTH5OyqTw/jjf/0GQ87.
-            tokenSigningKey: xaabZqe5R7Jt7KVV6I49aolOxIql0q3r
-            tokenTTL: 24h
-          host: kargo.roelvandegrint.com
-          ingress:
-            enabled: true
-            ingressClassName: traefik
-        controller:
-          logLevel: DEBUG
+  sources:
+    - repoURL: ghcr.io/akuity/kargo-charts
+      chart: kargo
+      targetRevision: 1.8.3
+      helm:
+        valuesObject:
+          api:
+            adminAccount:
+              passwordHash: $2y$10$j4TnpElSqzJEr./vzkUhouNChs.OXJjBFXTH5OyqTw/jjf/0GQ87.
+              tokenSigningKey: xaabZqe5R7Jt7KVV6I49aolOxIql0q3r
+              tokenTTL: 24h
+            host: kargo.roelvandegrint.com
+            ingress:
+              enabled: true
+              ingressClassName: traefik
+          controller:
+            logLevel: DEBUG
+    
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: implement_kargo
+      path: kargo/base
+
   syncPolicy:
     automated:
       prune: true
