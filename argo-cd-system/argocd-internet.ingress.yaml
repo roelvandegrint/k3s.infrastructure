@@ -8,10 +8,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - argocd.roelvandegrint.com
+        - argocdathome.roelvandegrint.com
       secretName: argocd-ingress-http-production
   rules:
-    - host: argocd.roelvandegrint.com
+    - host: argocdathome.roelvandegrint.com
       http:
         paths:
           - path: /
