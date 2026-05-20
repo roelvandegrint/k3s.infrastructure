@@ -29,7 +29,7 @@ spec:
               tls:
                 enabled: true
                 selfSignedCert: false
-                secretName: kargo-api-ingress-cert
+                secretName: kargo-api-ingress-cert-staging
             oidc:
               enabled: true
               issuerURL: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
