@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: argocdathome.roelvandegrint.com
   annotations:
-    cert-manager.io/issuer: letsencrypt-staging-http
+    cert-manager.io/issuer: letsencrypt-production-http
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   tls:
     - hosts:
         - argocdathome.roelvandegrint.com
-      secretName: argocdathome-ingress-http-staging
+      secretName: argocdathome-ingress-http-production
   rules:
     - host: argocdathome.roelvandegrint.com
       http:
