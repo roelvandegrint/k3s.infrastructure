@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  url: https://argocd.roelvandegrint.com/
+  url: https://argocdathome.roelvandegrint.com/
   oidc.config: |
     name: Azure
     issuer: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
