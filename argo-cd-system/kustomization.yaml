@@ -7,6 +7,7 @@ resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.5/manifests/install.yaml
   - argocd-internet.ingress.yaml
   - certmanager-letsencrypt-production.issuer.yaml
+  - certmanager-letsencrypt-staging.issuer.yaml
 
 components: []
 
