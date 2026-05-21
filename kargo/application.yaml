@@ -19,7 +19,7 @@ spec:
               passwordHash: $2y$10$3I8ycOZaTlptwJdrdn1f0eBO2kOt9o.0mMdzmABKOPQ6Z8rLY3jwW
               tokenSigningKey: dIfELVYgVkAzwOfMA31ZktWpu2MTTRs6
               tokenTTL: 24h
-            host: kargoathome.roelvandegrint.com
+            host: kargo.athome.roelvandegrint.com
             ingress:
               enabled: true
               ingressClassName: traefik
@@ -29,7 +29,7 @@ spec:
               tls:
                 enabled: true
                 selfSignedCert: false
-                secretName: kargo-api-ingress-cert-staging
+                secretName: kargo-api-ingress-cert-production
             oidc:
               enabled: true
               issuerURL: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
