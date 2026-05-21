@@ -1,0 +1,24 @@
+api:
+  adminAccount:
+    enabled: false    
+  host: kargo.athome.roelvandegrint.com
+  ingress:
+    enabled: true
+    ingressClassName: traefik
+    annotations:
+      cert-manager.io/issuer: letsencrypt-production-http
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    tls:
+      enabled: true
+      selfSignedCert: false
+      secretName: kargo-api-ingress-cert-production
+  oidc:
+    enabled: true
+    issuerURL: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
+    clientID: 302fb694-21e2-43bf-a174-163de3f2fd88
+    admins:
+      claims:
+        roles:
+          - admin
+  tls:
+    enabled: false
