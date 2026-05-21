@@ -13,15 +13,15 @@ spec:
       chart: kargo
       targetRevision: 1.8.3
       helm:
-        valuesFiles:
+        valueFiles:
           - $values/kargo/helm/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: implement_kargo
+      targetRevision: update_argocd_and_kargo_domains
       ref: values
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: implement_kargo
+      targetRevision: update_argocd_and_kargo_domains
       path: kargo/kustomize/overlays/k3s
 
   syncPolicy:
