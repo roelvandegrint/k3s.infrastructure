@@ -24,6 +24,13 @@ spec:
       targetRevision: update_argocd_and_kargo_domains
       path: kargo/kustomize/overlays/k3s
 
+  ignoreDifferences:
+    - group: ""
+      kind: Secret
+      name: kargo-api # Or other Kargo secret creating a diff
+      jsonPointers:
+      - /data      
+
   syncPolicy:
     automated:
       prune: true
