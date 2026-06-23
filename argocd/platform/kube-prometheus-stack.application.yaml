@@ -10,14 +10,14 @@ spec:
 
   sources:
     - repoURL: https://prometheus-community.github.io/helm-charts
-      targetRevision: 87.1.0
+      targetRevision: 72.3.0
       chart: kube-prometheus-stack
       helm:
         valueFiles:
           - $values/kube-prometheus-stack/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: upgrade-kube-prom-stack
+      targetRevision: HEAD
       ref: values
 
   destination:
