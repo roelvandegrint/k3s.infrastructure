@@ -10,7 +10,7 @@ spec:
 
   sources:
     - repoURL: https://prometheus-community.github.io/helm-charts
-      targetRevision: 72.3.0
+      targetRevision: 87.1.0
       chart: kube-prometheus-stack
       helm:
         valueFiles:
@@ -26,7 +26,9 @@ spec:
 
   syncPolicy:
     automated:
+      enabled: true
       prune: true
       selfHeal: true
     syncOptions:
+      - PruneLast=true
       - ServerSideApply=true
