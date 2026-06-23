@@ -9,15 +9,15 @@ spec:
   project: platform
 
   sources:
-    - repoURL: https://charts.jetstack.io
-      targetRevision: v1.17.1
-      chart: cert-manager
+    - path: .
+      repoURL: oci://quay.io/jetstack/charts/cert-manager
+      targetRevision: v1.20.2
       helm:
         valueFiles:
           - $values/cert-manager/values.yaml
   
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: HEAD
+      targetRevision: upgrade-certmanager
       ref: values
   
   destination:
@@ -26,5 +26,9 @@ spec:
   
   syncPolicy:
     automated: 
+      enabled: false
       prune: true
-      selfHeal: true
+      selfHeal: false
+    syncOptions:
+      - PruneLast=true
+      - ServerSideApply=true
