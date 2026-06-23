@@ -10,7 +10,7 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: upgrade-kube-prom-stack
+    targetRevision: HEAD
     path: argocd/platform
 
   destination:
@@ -19,6 +19,6 @@ spec:
   
   syncPolicy:
     automated:
-      enabled: false
+      enabled: true
       prune: true
-      selfHeal: false
+      selfHeal: true

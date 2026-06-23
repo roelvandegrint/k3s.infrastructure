@@ -17,7 +17,7 @@ spec:
           - $values/kube-prometheus-stack/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: upgrade-kube-prom-stack
+      targetRevision: HEAD
       ref: values
 
   destination:
@@ -26,9 +26,9 @@ spec:
 
   syncPolicy:
     automated:
-      enabled: false
+      enabled: true
       prune: true
-      selfHeal: false
+      selfHeal: true
     syncOptions:
       - PruneLast=true
       - ServerSideApply=true
