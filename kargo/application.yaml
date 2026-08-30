@@ -17,11 +17,11 @@ spec:
           - $values/kargo/helm/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: update_argocd_and_kargo_domains
+      targetRevision: main
       ref: values
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: update_argocd_and_kargo_domains
+      targetRevision: main
       path: kargo/kustomize/overlays/k3s
 
   ignoreDifferences:
@@ -29,7 +29,7 @@ spec:
       kind: Secret
       name: kargo-api # Or other Kargo secret creating a diff
       jsonPointers:
-      - /data      
+        - /data
 
   syncPolicy:
     automated:
