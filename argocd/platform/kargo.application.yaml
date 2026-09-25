@@ -17,11 +17,11 @@ spec:
           - $values/kargo/helm/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: main
+      targetRevision: kargo
       ref: values
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: main
+      targetRevision: kargo
       path: kargo/kustomize/overlays/k3s
 
   ignoreDifferences:
