@@ -9,7 +9,7 @@ spec:
   project: platform
 
   sources:
-    - repoURL: https://github.com/argoproj/argo-workflows/releases/download/v4.1.4/install.yaml
+    - repoURL: https://github.com/argoproj/argo-workflows
       targetRevision: v4.1.4
       path: argo-workflows/manifests/cluster-install
 
