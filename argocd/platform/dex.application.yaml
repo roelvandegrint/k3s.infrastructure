@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dex
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: dex
+    server: https://kubernetes.default.svc
+  sources:
+    - repoURL: https://charts.dexidp.io
+      chart: dex
+      targetRevision: 0.24.1
+      # helm:
+      #   valueFiles:
+      #     - $values/kargo/helm/values.yaml
+
+    # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+    #   targetRevision: kargo
+    #   ref: values
+
+    # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+    #   targetRevision: kargo
+    #   path: kargo/kustomize/overlays/k3s
+
+  # ignoreDifferences:
+  #   - group: ""
+  #     kind: Secret
+  #     name: kargo-api # Or other Kargo secret creating a diff
+  #     jsonPointers:
+  #       - /data
+
+  syncPolicy:
+    automated:
+      enabled: false
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
