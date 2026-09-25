@@ -9,16 +9,9 @@ spec:
   project: platform
 
   sources:
-    - chart: argo-workflows
-      repoURL: https://argoproj.github.io/argo-helm
-      targetRevision: 2.0.8
-      # helm:
-      # valueFiles:
-      # - $values/cert-manager/values.yaml
-
-    # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-    #   targetRevision: HEAD
-    #   ref: values
+    - repoURL: https://github.com/argoproj/argo-workflows/releases/download/v4.1.4/install.yaml
+      targetRevision: v4.1.4
+      path: argo-workflows/manifests/cluster-install
 
   destination:
     server: "https://kubernetes.default.svc"
