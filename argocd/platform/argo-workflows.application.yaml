@@ -11,7 +11,7 @@ spec:
   sources:
     - repoURL: https://github.com/argoproj/argo-workflows
       targetRevision: v4.1.4
-      path: argo-workflows/manifests/cluster-install
+      path: manifests/cluster-install
 
   destination:
     server: "https://kubernetes.default.svc"
