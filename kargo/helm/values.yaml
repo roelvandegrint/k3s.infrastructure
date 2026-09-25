@@ -1,6 +1,6 @@
 api:
   adminAccount:
-    enabled: true
+    enabled: false
   host: kargo.athome.roelvandegrint.com
   ingress:
     enabled: true
