@@ -4,28 +4,3 @@ config:
     type: kubernetes
     config:
       inCluster: true
-  web:
-    http: 0.0.0.0:5556
-  connectors:
-    - type: microsoft
-      id: azuread
-      name: Azure AD
-      config:
-        clientID: $AZURE_ CLIENT_ID
-        clientSecret: $AZURE_CLIENT_SECRET
-        redirectURI: https://dex.athome.roelvandegrint.com/callback
-        tenant: 170ab277-5815-42c5-8ecc-631639d90824
-        groups: true
-        onlySecurityGroups: true
-        groupNameFormat: name
-  staticClients:
-    - id: kubernetes
-      name: Kubernetes
-      redirectURIs:
-        - http://localhost:8000
-      secretEnv: KUBE_CLIENT_SECRET
-    - id: argocd
-      name: ArgoCD
-      redirectURIs:
-        - https://argocd.athome.roelvandegrint.com/api/dex/callback
-      secretEnv: ARGOCD_CLIENT_SECRET
