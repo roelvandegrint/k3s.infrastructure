@@ -22,9 +22,9 @@ spec:
       targetRevision: dex
       ref: values
 
-    # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-    #   targetRevision: kargo
-    #   path: kargo/kustomize/overlays/k3s
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: dex
+      path: dex/kustomize
 
   # ignoreDifferences:
   #   - group: ""
