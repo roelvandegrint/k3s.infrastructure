@@ -14,13 +14,13 @@ spec:
     - repoURL: https://charts.dexidp.io
       chart: dex
       targetRevision: 0.24.1
-      # helm:
-      #   valueFiles:
-      #     - $values/kargo/helm/values.yaml
+      helm:
+        valueFiles:
+          - $values/dex/values.yaml
 
-    # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-    #   targetRevision: kargo
-    #   ref: values
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: dex
+      ref: values
 
     # - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
     #   targetRevision: kargo
