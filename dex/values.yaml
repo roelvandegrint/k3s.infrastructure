@@ -4,3 +4,17 @@ config:
     type: kubernetes
     config:
       inCluster: true
+  # web:
+  #   http: 0.0.0.0:5556
+  connectors:
+    - type: microsoft
+      id: azuread
+      name: Azure AD
+      config:
+        clientID: fe309514-e4e8-4e98-ac4d-c1ad363609ed
+        clientSecret: $AZURE_CLIENT_SECRET
+        redirectURI: https://dex.athome.roelvandegrint.com/callback
+        tenant: 170ab277-5815-42c5-8ecc-631639d90824
+        groups: true
+        onlySecurityGroups: true
+        groupNameFormat: name
