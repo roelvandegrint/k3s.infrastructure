@@ -19,3 +19,5 @@ config:
 envFrom:
   - secretRef:
       name: azuread
+
+revisionHistoryLimit: 0
