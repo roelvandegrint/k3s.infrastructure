@@ -15,6 +15,13 @@ config:
         clientSecret: $AZURE_CLIENT_SECRET
         redirectURI: https://dex.athome.roelvandegrint.com/callback
         tenant: 170ab277-5815-42c5-8ecc-631639d90824
+  # enablePasswordDB: true
+  staticClients:
+    - id: argocd
+      name: ArgoCD
+      secret: my-argocd-secret
+      redirectURIs:
+        - https://argocd.athome.roelvandegrint.com/auth/callback
 
 envFrom:
   - secretRef:
