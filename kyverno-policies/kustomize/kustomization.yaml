@@ -1,3 +1,2 @@
-resources:
-  - fake-dashboard.yaml
-  - my-configmap.yaml
+resources: []
+  # - fake-dashboard.yaml
