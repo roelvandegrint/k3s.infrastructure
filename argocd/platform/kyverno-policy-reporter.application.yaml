@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno-policy-reporter
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: platform
+
+  sources:
+    - repoURL: https://kyverno.github.io/policy-reporter/
+      chart: policy-reporter
+      targetRevision: 1.9.0
+      helm:
+        valueFiles:
+          - $values/kyverno-policy-reporter/helm/values.yaml
+
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: kyverno-policy-reporter
+      ref: values
+
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: kyverno-policy-reporter
+      path: kyverno-policy-reporter
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: policy-reporter
+
+  syncPolicy:
+    automated:
+      enabled: false
+      prune: false
+      selfHeal: false
+    syncOptions:
+      - PruneLast=true
+      - ServerSideApply=true
