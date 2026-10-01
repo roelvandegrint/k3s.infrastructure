@@ -24,7 +24,7 @@ spec:
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
       targetRevision: kyverno
-      path: kyverno-policy-reporter
+      path: kyverno-policy-reporter/kustomize
 
   destination:
     server: "https://kubernetes.default.svc"
