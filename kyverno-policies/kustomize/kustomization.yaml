@@ -1,2 +1,2 @@
-resources: []
-  # - fake-dashboard.yaml
+resources:
+  - fake-dashboard.yaml
