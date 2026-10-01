@@ -19,11 +19,11 @@ spec:
           - $values/kyverno-policy-reporter/helm/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: kyverno-policy-reporter
+      targetRevision: kyverno
       ref: values
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: kyverno-policy-reporter
+      targetRevision: kyverno
       path: kyverno-policy-reporter
 
   destination:
