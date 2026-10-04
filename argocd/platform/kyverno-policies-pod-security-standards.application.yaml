@@ -19,11 +19,11 @@ spec:
           - $values/kyverno-policies/helm/values.yaml
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: kyverno
+      targetRevision: HEAD
       ref: values
 
     - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
-      targetRevision: kyverno
+      targetRevision: HEAD
       path: kyverno-policies/kustomize
 
   destination:
@@ -32,9 +32,9 @@ spec:
 
   syncPolicy:
     automated:
-      enabled: false
-      prune: false
-      selfHeal: false
+      enabled: true
+      prune: true
+      selfHeal: true
     syncOptions:
       - PruneLast=true
       - ServerSideApply=true
