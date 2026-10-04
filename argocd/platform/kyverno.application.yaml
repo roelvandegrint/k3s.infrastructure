@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kyverno
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: platform
+
+  sources:
+    - repoURL: https://kyverno.github.io/kyverno/
+      chart: kyverno
+      targetRevision: 3.9.1
+      helm:
+        valueFiles:
+          - $values/kyverno/helm/values.yaml
+
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: HEAD
+      ref: values
+
+    - repoURL: https://github.com/roelvandegrint/k3s.infrastructure.git
+      targetRevision: HEAD
+      path: kyverno/kustomize
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kyverno
+
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+      - ServerSideApply=true
