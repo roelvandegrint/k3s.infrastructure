@@ -15,3 +15,4 @@ patches:
   - path: patch-argocd-cmd-params-cm.configmap.yaml
   - path: patch-argocd-rbac-cm.configmap.yaml
   - path: patch-argocd-repo-server.deployment.yaml
+  - path: patch-argocd-repo-server.serviceaccount.yaml
