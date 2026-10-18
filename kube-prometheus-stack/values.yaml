@@ -24,7 +24,7 @@ grafana:
       allow_sign_up: true
       auto_login: false
       client_authentication: workload_identity
-      client_id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
+      client_id: a7fd4c20-d1d5-4382-92fb-8d26730991ac
       federated_credential_audience: api://AzureADTokenExchange
       workload_identity_token_file: $__env{AZURE_FEDERATED_TOKEN_FILE}
       scopes: openid email profile
@@ -46,7 +46,7 @@ grafana:
 
   serviceAccount:
     annotations:
-      azure.workload.identity/client-id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
+      azure.workload.identity/client-id: a7fd4c20-d1d5-4382-92fb-8d26730991ac
 
   podLabels:
     azure.workload.identity/use: "true"
