@@ -26,6 +26,7 @@ grafana:
       client_authentication: workload_identity
       client_id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
       federated_credential_audience: api://AzureADTokenExchange
+      workload_identity_token_file: $__env{AZURE_FEDERATED_TOKEN_FILE}
       scopes: openid email profile
       auth_url: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/oauth2/v2.0/authorize
       token_url: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/oauth2/v2.0/token
