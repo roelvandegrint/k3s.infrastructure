@@ -21,7 +21,7 @@ grafana:
     auth.azuread:
       name: Entra ID
       enabled: true
-      allow_sign_up: false
+      allow_sign_up: true
       auto_login: false
       client_authentication: workload_identity
       client_id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
