@@ -15,12 +15,6 @@ prometheus:
     serviceMonitorSelector: {}
 
 grafana:
-  ingress:
-    enabled: true
-
-    hosts:
-      - grafana.athome.roelvandegrint.com
-
   grafana.ini:
     server:
       root_url: "https://grafana.athome.roelvandegrint.com"
@@ -42,3 +36,16 @@ grafana:
       allow_assign_grafana_admin: false
       skip_org_role_sync: false
       use_pkce: true
+
+  ingress:
+    enabled: true
+
+    hosts:
+      - grafana.athome.roelvandegrint.com
+
+  serviceAccount:
+    annotations:
+      azure.workload.identity/client-id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
+
+  podLabels:
+    azure.workload.identity/use: "true"
