@@ -19,4 +19,26 @@ grafana:
     enabled: true
 
     hosts:
-      - grafana.k3s
+      - grafana.athome.roelvandegrint.com
+
+  grafana.ini:
+    server:
+      root_url: "https://grafana.athome.roelvandegrint.com"
+    auth.azuread:
+      name: Entra ID
+      enabled: true
+      allow_sign_up: false
+      auto_login: false
+      client_authentication: workload_identity
+      client_id: e7e24657-c976-44b9-b0e6-63a45cf3ebe1
+      federated_credential_audience: api://AzureADTokenExchange
+      scopes: openid email profile
+      auth_url: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/oauth2/v2.0/authorize
+      token_url: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/oauth2/v2.0/token
+      allowed_domains:
+      allowed_groups:
+      allowed_organizations: 170ab277-5815-42c5-8ecc-631639d90824
+      role_attribute_strict: false
+      allow_assign_grafana_admin: false
+      skip_org_role_sync: false
+      use_pkce: true
