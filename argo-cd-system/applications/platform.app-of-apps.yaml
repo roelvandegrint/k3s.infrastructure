@@ -10,13 +10,13 @@ spec:
 
   source:
     repoURL: https://github.com/roelvandegrint/k3s.infrastructure
-    targetRevision: HEAD
+    targetRevision: grafana-oidc-entra
     path: argocd/platform
 
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
-  
+
   syncPolicy:
     automated:
       enabled: true
