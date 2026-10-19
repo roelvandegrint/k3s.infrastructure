@@ -9,7 +9,7 @@ data:
     issuer: https://login.microsoftonline.com/170ab277-5815-42c5-8ecc-631639d90824/v2.0
     clientID: be56f2bb-694c-4bef-859e-e4581e6ea2be
     azure:
-      useWorkloadIdentity: true // if using azure workload identity for authentication
+      useWorkloadIdentity: true
     requestedIDTokenClaims:
       groups:
         essential: true
